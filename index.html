@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<title>Juegos con html5: Learning Js on the road</title>
@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
-		<link rel="stylesheet" href="lib/zenburn.css">
+		<link rel="stylesheet" href="lib/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -25,14 +25,14 @@
 					<img src="img/html5game.png"alt="reality of html5 games"/>
 					<script>
 						// Delicously hacky. Look away.
-						if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i))
+						if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i))
 							document.write('<p style="color: rgba(0,0,0,0.3); text-shadow: none;">(' + 'Tap to navigate' + ')</p>');
 
 					</script>
 				</section>
 				<section>
 					<section>
-						<h1>Y estos </h1><h1>manes que?</h1>
+						<h1>Sobre</h1><h1>los expositores?</h1>
 					</section>
 					<section>
 						<h3 class="inverted">Dany Bautista</h3>
@@ -59,7 +59,7 @@
 					</section>
 				</section>
 				<section>
-					<h2>Con que me van a tramar?</h2>
+					<h2>Lo que Veremos</h2>
 					<ul>
 						<li class="fragment">
 							Por que me deberian importar los juegos en HTML5?
@@ -121,198 +121,241 @@
 					</section>
 				</section>
 				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
-					</p>
-				</section>
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
-					</p>
-				</section>
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
-					<ul>
-						<li>
-							<a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a>
-						</li>
-						<li>
-							<a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a>
-						</li>
-						<li>
-							<a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a>
-						</li>
-						<li>
-							<a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>
-							No order here
-						</li>
-						<li>
-							Or here
-						</li>
-						<li>
-							Or here
-						</li>
-						<li>
-							Or here
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>
-							One is smaller than...
-						</li>
-						<li>
-							Two is smaller than...
-						</li>
-						<li>
-							Three!
-						</li>
-					</ol>
-				</section>
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
-						<p>
-							Set
-							<code>
-								data-state="something"
-							</code>
-							on a slide and
-							<code>
-								"something"
-							</code>
-							will be added as a class to the document element when the slide is open. This let's you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#/7/1" class="image"> <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"> </a>
+					<section>
+						<h2>Estado Actual</h2>
+						<img src="img/angrymario.jpeg" alt="angry mario"/>
 					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image"> <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"> </a>
+					<section>
+						<h1>Graficos 2D</h1>
+						<h2>El primer dilema: SVG vs Canvas</h2>
+						<table width="100%"style="border:0;">
+							<tr style="border:0;">
+								<td style="border:0;" width="50%"><canvas id="canvasEj"></canvas></td>
+								<td style="border:0;" width="50%">
+								<svg id="svgEj" height="100" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<linearGradient id="linearGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+											<stop offset="0%" style="stop-color:rgb(142,102,255);stop-opacity:1" />
+											<stop offset="100%" style="stop-color:rgb(9,76,179);stop-opacity:1" />
+										</linearGradient>
+									</defs>
+									<rect id="svgRect" width="200" height="100" fill="url(#linearGrad)" stroke="#000" />
+									<text fill="#ffffff" font-size="45" font-family="Verdana" x="40" y="60">
+										SVG
+									</text>
+								</svg></td>
+							</tr>
+						</table>
 					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image"> <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);"> </a>
+					<section>
+						<table>
+							<tr>
+								<td>Canvas</td>
+								<td>SVG</td>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+									<li>
+										API Javascript
+									</li>
+									<li>
+										Graficos de mapa de bits
+									</li>
+									<li>
+										Es veloz dibujando los graficos
+									</li>
+									<li>
+										Excelente Manipulacion de pixeles
+									</li>
+									<li>
+										Modelo de eventos basado en pixeles
+									</li>
+								</ul></td>
+								<td>
+								<ul>
+									<li>
+										Interacción a traves del SVG DOM API via JS
+									</li>
+									<li>
+										Graficos Vectoriales independientes de una resolución , escalables
+									</li>
+									<li>
+										Capacidades de animación incorporadas en el markup o via JS
+									</li>
+									<li>
+										Modelo de eventos basado en el objeto
+									</li>
+								</ul></td>
+							</tr>
+						</table>
+
 					</section>
-				</section>
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the
-						<code>
-							data-state
-						</code>
-						name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	alert( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations"> The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-				document.body.style['MozPerspective'] !== undefined ||
-				document.body.style['perspective'] !== undefined;
+					<section>
+						<h2>SVG vs Canvas en Codigo</h2>
+						<div class="demostrar">
+							<a href="#/4/1" class="minilink">Verlo funcionando</a>
+						</div>
+						<div style="width:480px;float:left" >
+							<pre><code class="html">
+								window.onload = function() {
+        var canvas = document.getElementById('canvasEj');
+        var context = canvas.getContext('2d');
 
-function linkify( selector ) {
-    if( supports3DTransforms ) {
-        
-        var nodes = document.querySelectorAll( selector );
+        context.beginPath();
+        context.rect(0, 0, 200, 100);
+        // create radial gradient
+        var grd = context.createRadialGradient(138, 50, 10, 138, 50, 200);
+        // light blue
+        grd.addColorStop(0, "#8E66FF");
+        // dark blue
+        grd.addColorStop(1, "#094CB3");
+        context.fillStyle = grd;
+        context.fill();
+        context.font = "40px Arial";
+        context.fillStyle = "white";
+        context.fillText("Canvas", 40, 60);
+        context.lineWidth = 5;
+        context.strokeStyle = 'black';
+        context.stroke();
+      };
+      
+      //HTML OJO: Reemplazar () con <>
+      (canvas id="canvasEj")(/canvas)
+      
+								
+							</code></pre>
+						</div>
+						<div style="width:480px;float:left" >
+							<pre><code class="html">
+								//HTML OJO: Reemplazar () con <>
+								 (svg id="svgEj" height="100" xmlns="http://www.w3.org/2000/svg")
+								(defs)
+								 (linearGradient id="linearGrad" x1="0%" y1="0%" x2="0%" y2="100%")
+								 (stop offset="0%" style="stop-color:rgb(142,102,255);stop-opacity:1" /)
+								 (stop offset="100%" style="stop-color:rgb(9,76,179);stop-opacity:1" /)
+								 (/linearGradient)
+								(/defs)
+								(rect id="svgRect" width="200" height="100" fill="url(#linearGrad)" stroke="#000" /)
+							    (text fill="#ffffff" font-size="45" font-family="Verdana" x="40" y="60")SVG(/text)
+								(/svg)
+							</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>Graficos 3D</h2>
+						<h2>El territorio de WebGL</h2>
+						<iframe src="http://aleksandarrodic.com/p/jellyfish/" width="600px"height="400px"></iframe>
+						<div class="demostrar">
+							<a class="minilink" href="http://aleksandarrodic.com/p/jellyfish/">Fuente:http://aleksandarrodic.com/p/jellyfish/ , Aleksandar Rodic</a>
+						</div>
+					</section>
+					<section>
+						<h2>Caracteristicas de WebGL</h2>
+						<ul>
+							<li>
+								API Javascript basada en OpenGL para sistemas embebidos (OpenGL ES 2.0)
+							</li>
+							<li>
+								Acelerado por hardware, permitiendo efectos mas complejos
+							</li>
+							<li>
+								Es un poco dificil de aprender
+							</li>
+							<li>
+								No soportada nativamente en IE
+							</li>
+							<li>
+								Una buena opción para manejar WebGL es <a href="https://github.com/mrdoob/three.js/">Three.js</a>
+							</li>
+						</ul>
 
-        for( var i = 0, len = nodes.length; i < len; i++ ) {
-            var node = nodes[i];
+					</section>
+					<section>
+						<h2>WebSockets</h2>
+						<h3>La solución definitiva para juegos multijugador</h3>
+						<div style="width:660px;margin-right:20px;float:left" >
+							<p>
+								A diferencia de <i>AJAX</i> permite una conexión bidireccional natural,
+								que no necesita de constantes 'request', ahorrando ancho de banda y permitiendo
+								un flujo de datos en tiempo real, es ahora soportado por todos los navegadores modernos.
+							</p>
+						</div>
+						<div style="width:280px;float:left" >
+							<a target="_blank"href="http://browserquest.mozilla.org/"><img src="img/mmorpg.jpg" width="100%" alt="juego mmorpg"/></a>
+						</div>
+					</section>
+					<section>
+						<h2>La Magia de Otras API's</h2>
+						<h3>para sacarle todo el jugo a HTML5</h3>
+						<ul>
+							<li>
+								Podemos almacenar datos localmente con <a href="http://www.html5rocks.com/en/tutorials/file/filesystem/" target="_blank"> IndexedDB,Local Storage</a>
+							</li>
+							<li>
+								Jugar 'off-line' mediante <a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/" target="_blank">'application cache'</a>
+							</li>
+							<li>
+								Al fin juegos a pantalla completa con <a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode">Fullscreen API</a>
+							</li>
+							<li>
+								Mejor control del mouse con <a href="https://developer.mozilla.org/en/API/Pointer_Lock_API" target"_blank">MouseLock API</a>
+							</li>
+							<li>
+								Adios al WASD + ZXC con <a href="https://developer.mozilla.org/en/API/Gamepad/Using_Gamepad_API"target="_blank">Gamepad API</a>
+							</li>
+							<li>
+								Convirtiendo nuestras aplicaciones web en aplicaciones del SO con 'run-times' como <a href="https://developer.mozilla.org/es/Aplicaciones/Arquitectura_de_aplicaciones" target="_blank">WebRT </a>
+							</li>
+						</ul>
+					</section>
 
-            if( !node.className || !node.className.match( /roll/g ) ) {
-                node.className += ' roll';
-                node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-            }
-        };
-    }
-}
+				</section>
+				<section>
+					<h2>Ten en cuenta lo que necesitas desarrollar</h2>
+					<h4>You don't know the power of the Dark Side</h4>
+					<div style="width:280px;margin-right:60px;float:left" >
+						<img src="img/sheldon.png" alt="sheldon uses the force" width="100%"/>
+					</div>
+					<div style="width:620px;float:left" >
+						<ul>
+							<li>
+								La mayoria de las APIs son experimentales
+							</li>
+							<li>
+								La curva de aprendizaje puese ser larga
+							</li>
+							<li>
+								Es necesario saber como es el rendimiento de la
+								plataforma objetivo de tu juego para saber como desarrollarlo
+							</li>
 
-linkify( 'a' );
-					</code></pre>
-					<p>
-						Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.
-					</p>
+						</ul>
+
+					</div>
+
 				</section>
 				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<br/>
-						<a href="#/2/3">like this</a>.
-					</p>
+					<h2>Distribución y monetización</h2>
+					<h3>X-Browser, App Stores, Creditos y Suscripciones son la Clave</h3>
+					<img src="img/moneyop.png" alt="MarketPlaces , Creditos"/>
+					
 				</section>
+				
+				
+				
+				
+				
+				
 				<section>
-					<h2>Fragmented Views</h2>
-					<p>
-						Hit the next arrow...
-					</p>
-					<p class="fragment">
-						... to step through ...
-					</p>
-					<ol>
-						<li class="fragment">
-							<code>
-								any type
-							</code>
-						</li>
-						<li class="fragment">
-							<em>of view</em>
-						</li>
-						<li class="fragment">
-							<strong>fragments</strong>
-						</li>
-					</ol>
-				</section>
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank"> <img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png"> </a>
-				</section>
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li>
-							<a href="https://github.com/hakimel/reveal.js">Source code on github</a>
-						</li>
-						<li>
-							<a href="http://hakim.se/projects/reveal-js">Read more on my site</a>
-						</li>
-						<li>
-							<a href="http://twitter.com/hakimel">Follow me on Twitter</a>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h1>THE END</h1>
-					<h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
+					<h1>Muchas Gracias!</h1>
+					<h3 class="inverted">Si te gusto siguenos:</h3>
+					<img src="img/gracias.jpg" alt="gracias totales" style="display:block;margin:10px auto;"/>
+					<a href="http://twitter.com/davidcp90" target="_blank">@davidcp90</a>
+					<a href="http://davidcamargo.com" target="_blank">David Camargo Website - Coming Soon</a>
+					<a href="http://twitter.com/danyjavierb" target="_blank">@danyjavierb</a>
+					<a href="http://danybau.com" target="_blank">DanyBau Blog - Coming Soon</a>
+					<p>Puedes encontrar la presentación en <a href="http://giweb.org/gamesexpo" target="_blank">http://giweb.org/gamesexpo</a></p>
 				</section>
 			</div>
 			<!-- The navigational controls UI -->
@@ -375,5 +418,6 @@ linkify( 'a' );
 			hljs.initHighlightingOnLoad();
 
 		</script>
+		<script src="js/ejemplos.js"></script>
 	</body>
 </html>
