@@ -23,3 +23,21 @@
         context.strokeStyle = 'black';
         context.stroke();
       };
+      
+		for (var i =0; i< naves.length;i++){
+	        
+	        var vel=Math.sqrt(naves[i].vx*naves[i].vx+naves[i].vy+naves[i].vy);
+	        if (vel>=PG.velMax){
+	                
+	                naves[i].vx *= PG.velMax/vel;
+	                naves[i].vx *= PG.velMax/vel;
+	        }
+	        
+	        naves[i].vx*=PG.friccion;
+	        naves[i].vy*=PG.friccion;
+	        
+		}
+		}
+	        
+		
+        

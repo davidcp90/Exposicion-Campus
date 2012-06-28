@@ -68,7 +68,7 @@
 							Cual es el estado de los juegos en HTML5?
 						</li>
 						<li class="fragment">
-							El lado oscuro de los juegos en HTML5
+							El lado oscuro de los juegos en HTML5,Que debo tener en cuenta?
 						</li>
 						<li class="fragment">
 							Distribución y monetización, que opciones existen?
@@ -339,14 +339,159 @@
 					<h2>Distribución y monetización</h2>
 					<h3>X-Browser, App Stores, Creditos y Suscripciones son la Clave</h3>
 					<img src="img/moneyop.png" alt="MarketPlaces , Creditos"/>
-					
+
 				</section>
-				
-				
-				
-				
-				
-				
+				<section>
+					<section >
+						<h2>Vamos a crear un juego desde 0!</h2>
+						<h3>Invasión Ovni,Guerra de Ovnis,Ovnis intocables?</h3>
+						<h2>Inicio,Nudo,Desenlace</h2>
+						<img src="img/ovni.png" alt="ovni" />
+						<img src="img/ovni.png" alt="ovni"/>
+						<img src="img/ovni.png" alt="ovni" />
+						<img src="img/ovni.png" alt="ovni"/>
+						<img src="img/ovni.png" alt="ovni" />
+						<img src="img/ovni.png" alt="ovni"/>
+						<img src="img/ovni.png" alt="ovni" />
+						<img src="img/ovni.png" alt="ovni"/>
+					</section>
+
+					<section>
+						<h2>Diseñando un juego de ovnis</h2>
+						<ul>
+							<li>
+								juego.js.
+								<ol>
+									<li>
+										logica del juego:Deteccion de coliciones
+									</li>
+									<li>
+										rutinas de fisica
+									</li>
+									<li>
+										matematicas
+									</li>
+								</ol>
+							</li>
+							<li>
+								cliente.js
+								<ol>
+									<li>
+										bucle del juego
+									</li>
+									<li>
+										renderizado en canvas
+									</li>
+								</ol>
+
+							</li>
+							<li>
+								ovnis.html
+								<ol>
+									<li>
+										esqueleto del juego
+									</li>
+									<li>
+										tag canvas
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Juego.js</h1>
+					
+					</section>
+					<section>
+						<h2>Propiedades Generales</h2>
+						<pre><code>
+var PG={
+        anchoJuego:700,
+        altoJuego: 400,
+        tiempoFrame:20,
+        radioNave:25,
+        friccion:0.97,
+        velMax:6,
+        velGiro:0.1,
+        acceleracion:0.3
+        
+};
+						</code></pre>
+					</section>
+					<section>
+						<h2>Chequear colisiones con paredes laterales</h2>
+						<img src="img/colisiones.png"/><br/>
+						<img src="img/velocidad.png"/>
+					</section>
+					<section>
+					<h2>Chequear colisiones con paredes laterales</h2>
+					<pre>	<code>
+if(naves[i].x<=PG.radioNave || naves[i].x>= PG.anchoJuego-PG.radioNave){
+                        
+                      
+if ((naves[i].x<=PG.radioNave && naves[i].vx<=0)||(naves[i].x>=PG.anchoJuego-PG.radioNave && naves[i].vx>=0 )){
+ //[indexovni1, indexovni2,impulsox,impulsoy]
+ impulsos.push([i,null,2*naves[i].vx,0]);
+                                                                        
+}
+                        
+if(naves[i].x<=PG.radioNave)naves[i].x=PG.radioNave;
+if(naves[i].x>= PG.anchoJuego-PG.radioNave)naves[i].x=PG.anchoJuego-PG.radioNave;
+                        
+                        
+}
+          </code></pre>
+          <img src="img/paredeslaterales.png" alt="paredes lat"/>
+               </section>
+				<section>
+					<h2>Colisiones arriba y abajo</h2>
+					<pre><code>
+if(naves[i].y<=PG.radioNave || naves[i].x>= PG.altoJuego-PG.radioNave){
+                        
+                       
+if ((naves[i].y<=PG.radioNave && naves[i].vy<=0 )||(naves[i].y>=PG.altoJuego-PG.radioNave && naves[i].vy>=0)){
+//[indexovni1, indexovni2,impulsox,impulsoy]
+   impulsos.push([i,null,2*naves[i].vy,0]);
+                                                                        
+}
+                        
+if(naves[i].y<=PG.radioNave)naves[i].y=PG.radioNave;
+if(naves[i].y>= PG.altoJuego-PG.radioNave)naves[i].y=PG.altoJuego-PG.radioNave;
+                        
+                        
+}
+					</code></pre>
+				</section>
+					<section>
+						<h2>Choques entre 2 naves</h2>
+						<img src="img/distanciadosnaves.png"/>
+					</section>
+					<section>
+						<h2>Choques entre 2 naves</h2>
+						<img src="img/choques.png"/>
+					
+					</section>
+					<section>
+						<h2>Aplicar impulso</h2>
+						<img src="img/impulsos.png"/>
+					
+					</section>
+					<section>
+						<h2>Restringir Velocidades</h2>
+						<img src="img/restringir.png"/>
+					
+					</section>
+					<section>
+						<h1>cliente.js</h1>
+					
+					</section>
+					<section>
+						<h2>Desenlace</h2>
+						<h3>Ahora es tu turno</h3>
+						<img src="img/you.jpg"/>
+					</section>
+				</section>
+
 				<section>
 					<h1>Muchas Gracias!</h1>
 					<h3 class="inverted">Si te gusto siguenos:</h3>
@@ -355,7 +500,9 @@
 					<a href="http://davidcamargo.com" target="_blank">David Camargo Website - Coming Soon</a>
 					<a href="http://twitter.com/danyjavierb" target="_blank">@danyjavierb</a>
 					<a href="http://danybau.com" target="_blank">DanyBau Blog - Coming Soon</a>
-					<p>Puedes encontrar la presentación en <a href="http://giweb.org/gamesexpo" target="_blank">http://giweb.org/gamesexpo</a></p>
+					<p>
+						Puedes encontrar la presentación en <a href="http://giweb.org/gamesexpo" target="_blank">http://giweb.org/gamesexpo</a>
+					</p>
 				</section>
 			</div>
 			<!-- The navigational controls UI -->
